@@ -606,6 +606,230 @@ header {
     z-index: 1; /* Hero stays behind the navbar */
 }
 
+/*about*/
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
+
+.about {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #000, #8a2be2);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* General Styles */
+.section {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to right, #1f1f1f, #3a3a3a);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Background Animation */
+.section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(138, 43, 226, 0.6), transparent);
+  animation: glow 8s infinite alternate ease-in-out;
+  z-index: -2;
+}
+
+/* Background Particles */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.particle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(138, 43, 226, 0.8);
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: float 8s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-200px) translateX(100px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.5;
+  }
+}
+
+@keyframes glow {
+  0% {
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.3), transparent);
+    filter: blur(5px);
+  }
+  100% {
+    background: radial-gradient(circle, rgba(138, 43, 226, 0.6), transparent);
+    filter: blur(10px);
+  }
+}
+
+/* Container */
+.container {
+  display: flex;
+  max-width: 1000px;
+  width: 90%;
+  background: #262626;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+  border: 2px solid #8a2be2;
+  position: relative;
+  z-index: 1;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Left Section */
+.left {
+  background: #1a1a1a;
+  text-align: center;
+  padding: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.left .logo1 img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.5)); /* Soft glow */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  animation: bounce 3s infinite ease-in-out;
+}
+
+/* Logo Bounce Animation */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.left .logo1 img:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px rgba(138, 43, 226, 0.8)); /* Stronger glow */
+}
+
+.left h1 {
+  font-size: 1.8rem;
+  font-family: 'Space Grotesk', sans-serif;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.left p {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+/* Right Section */
+.right {
+  padding: 30px;
+  flex: 1.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+.right h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #fff;
+  border-bottom: 2px solid #8a2be2;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+.right p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #ddd;
+  margin: 10px 0;
+}
+
+.right p strong {
+  color: #8a2be2;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .left {
+    padding: 20px;
+  }
+
+  .right {
+    padding: 20px;
+  }
+
+  .right h2 {
+    font-size: 1.5rem;
+  }
+
+  .right p {
+    font-size: 0.9rem;
+  }
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 /* Services Section */
