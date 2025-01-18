@@ -19,6 +19,7 @@
     overflow: hidden;
     animation: gradientDepth 2s ease-in-out infinite, parallaxShift 30s linear infinite;
     box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.8); /* Inner glow */
+    transform: translateZ(0); /* Forces GPU rendering */
 }
 
 /* ⚡ Flashy Moving Lines */
