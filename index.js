@@ -51,3 +51,57 @@ window.addEventListener("load", function () {
         typingText.style.animationPlayState = "running";
     }, 500); // Adjust delay if needed
 });
+
+
+// 🌚 Darken Navbar on Scroll
+window.addEventListener("scroll", function () {
+    const header = document.querySelector("header");
+    if (window.scrollY > 50) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+});
+
+document.querySelectorAll('.service-btn').forEach(button => {
+    button.addEventListener('click', () => {
+      alert(`You clicked on ${button.textContent.trim()}`);
+    });
+  });
+
+// Select the services container
+const servicesSection = document.querySelector('.services-container');
+
+// Create the Intersection Observer
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Add the 'show' class to trigger the animation
+      servicesSection.classList.add('show');
+      observer.unobserve(entry.target); // Stops observing after animation
+    }
+  });
+}, {
+  threshold: 0.3 // Trigger when 30% of the section is visible
+});
+
+// Observe the services section
+observer.observe(servicesSection);
+
+// Select all service buttons
+const serviceButtons = document.querySelectorAll('.service-btn');
+
+// Create an Intersection Detector
+const visibilityDetector = new IntersectionObserver((elements, visibilityChecker) => {
+  elements.forEach(item => {
+    if (item.isIntersecting) {
+      item.target.classList.add('show'); // Add 'show' class when in view
+      visibilityChecker.unobserve(item.target); // Stop tracking once visible
+    }
+  });
+}, {
+  threshold: 0.2 // Trigger when 20% of the element is visible
+});
+
+// Track visibility for each service button
+serviceButtons.forEach(button => visibilityDetector.observe(button));
