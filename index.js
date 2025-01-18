@@ -32,3 +32,22 @@ window.addEventListener("load", function () {
         preloader.remove();
     }, 500); // Remove after transition
 });
+
+window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    const typingText = document.querySelector(".typing");
+
+    // Fade out preloader
+    preloader.style.opacity = "0";
+    preloader.style.visibility = "hidden";
+    preloader.style.transition = "opacity 0.5s ease-out";
+
+    // Start typing animation after preloader disappears
+    setTimeout(() => {
+        preloader.remove();
+
+        // ✨ Show and start the typing animation
+        typingText.style.opacity = "1";
+        typingText.style.animationPlayState = "running";
+    }, 500); // Adjust delay if needed
+});
