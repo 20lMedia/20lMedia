@@ -569,6 +569,41 @@ header{
     to { width: 100% }
 }
 
+
+/* 🌐 Transparent Navbar */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent; /* Fully transparent */
+    z-index: 1000;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 🦸‍♂️ Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px; /* Push content below the fixed navbar */
+}
+
+header {
+    z-index: 1000; /* Navbar on top */
+}
+
+.hero {
+    position: relative;
+    z-index: 1; /* Hero stays behind the navbar */
+}
+
+
 @keyframes blink-caret {
     50% { border-color: transparent; }
 }
