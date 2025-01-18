@@ -105,3 +105,6 @@ const visibilityDetector = new IntersectionObserver((elements, visibilityChecker
 
 // Track visibility for each service button
 serviceButtons.forEach(button => visibilityDetector.observe(button));
+document.querySelector('button').addEventListener('click', () => {
+  alert('Redirecting to Resume...');
+});
