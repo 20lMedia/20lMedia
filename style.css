@@ -557,3 +557,18 @@ header{
         opacity: 0.8;
     }
 }
+
+.typing {
+    opacity: 0; /* Hide initially */
+    animation: typing 4s steps(40, end), blink-caret 0.75s step-end infinite;
+    animation-play-state: paused; /* ⏸️ Pause by default */
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    50% { border-color: transparent; }
+}
