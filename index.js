@@ -108,3 +108,7 @@ serviceButtons.forEach(button => visibilityDetector.observe(button));
 document.querySelector('button').addEventListener('click', () => {
   alert('Redirecting to Resume...');
 });
+/*about*/
+document.querySelector('button').addEventListener('click', () => {
+  alert('Redirecting to Resume...');
+});
