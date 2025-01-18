@@ -21,3 +21,14 @@ function typeEffect() {
 }
 
 document.addEventListener("DOMContentLoaded", typeEffect);
+
+// ✅ Remove Preloader Once the Page Loads
+window.addEventListener("load", function () {
+    const preloader = document.getElementById("preloader");
+    preloader.style.opacity = "0";
+    preloader.style.visibility = "hidden";
+    preloader.style.transition = "opacity 0.5s ease-out";
+    setTimeout(() => {
+        preloader.remove();
+    }, 500); // Remove after transition
+});
