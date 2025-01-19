@@ -1051,3 +1051,26 @@ footer {
   .footer-links a:hover {
     color: #ffffff; /* Brighten on hover */
   }
+
+
+/* Ensure the body takes full height */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0; /* Remove default margins */
+}
+
+/* Push footer to the bottom if content is short */
+footer {
+  margin-top: auto;
+}
+
+footer {
+  background-color: #111; /* Dark background to match the design */
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  width: 100%; /* Ensure it spans the full width */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3); /* Optional shadow effect */
+}
